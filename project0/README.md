@@ -55,8 +55,8 @@ Docker is perhaps the most popular container technology at this time, and is wid
 - Follow the appropriate `Getting Started` guide to make sure that Docker is working as expected.
 	- Macs: https://docs.docker.com/docker-for-mac/
 	- Windows: https://docs.docker.com/docker-for-windows/
-- We will use the `Jupyter Notebook Data Science Stack` for now. You can start it using the following command in the commandline -- replace PWD with the path to the git directory. More detailed description of the image is available at: https://hub.docker.com/r/jupyter/datascience-notebook/
-	- docker run -it -v PWD/project0:/home/jovyan/notebooks  --rm -p 8888:8888 jupyter/datascience-notebook
+- We will use the `Jupyter Notebook Data Science Stack` for now. You can start it using the following command in the commandline -- replace PWD with the path to the git directory. More detailed description of the image is available at: https://hub.docker.com/r/jmct/cmsc320
+	- docker run -it -v PWD/project0:/home/jovyan/notebooks  --rm -p 8888:8888 jmct/cmsc320
 - Quick explanation of the above command (don't worry if you don't follow this right now):
 	- `-p 8888:8888` maps the 8888 port on the host OS to the 8888 port on the guest container. So if you were to go to http://localhost:8888, it will redirect to the 8888 port on the container - Jupyter Notebook starts a web server on that port on the guest.
 	- `-v PWD/project0:/home/jovyan/notebooks` mounts the current project0 directory on the guest, so that everything in project0 directry will be available in `notebooks` directory on the guest.
@@ -87,3 +87,5 @@ You should only try this option if you are comfortable with the steps described 
 ### Assignment 
 
 Complete the function in `Project 0 Assignment` Notebook, and upload the `Project 0 Assignment.ipynb` file to ELMS.
+
+WARNING: You should ensure that youre `ipynb` file is your _completed_ assignment. A common error case is that students submit the original `ipynb` and not their updated one! This can happen if you're not loading the docker container correctly and so the work does not save to your host machine.
